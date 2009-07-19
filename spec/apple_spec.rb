@@ -10,22 +10,22 @@ describe Apple do
 
 
 
-  describe "when first created" do
+  describe "when apple first created" do
 
-    it "should size 0 for new apple" do    
+    it "should have size 0" do    
       @apple.size.should == 0
     end
 
-    it "should age 0 for new apple" do    
+    it "should have age 0" do    
       @apple.age.should == 0
     end
 
-    it "should color green for new apple" do
+    it "should be green" do
       @apple.color.should == 'green'
     end
 
     it "should new apple don't be ready for eating" do
-      @apple.ready?.should == false
+      @apple.should_not be_ready
     end
 
   end
@@ -34,17 +34,15 @@ describe Apple do
 
   describe "when it is growing" do
   
-    it "should apple age is growing" do
+    it "should age is growing" do
       @apple.grow(20)
       @apple.age.should == 20
     end
 
-    it "should apple is have to have bigger size" do
-      create_new_apple
-      size_prev = @apple.size
-      @apple.grow(100)
-      @apple.size.should > size_prev
+    it "should size change" do
+      lambda { @apple.grow(100) }.should change(@apple, :size)
     end
+
   end
 
 end

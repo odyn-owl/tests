@@ -1,18 +1,21 @@
 class Apple
 
-    @@apple_count = 0
+  @@apple_count = 0
 
-    attr_reader :color, :age, :size
-    
-  def initialize
-    @color = 'green'
-    @age, @size = 0, 0
-    @taste = 'yuck'
-
-    @@apple_count +=1
+  attr_reader :color, :age, :size
+  
+  def self.report
+    puts "Count of apples - #{@@apple_count}"
   end
 
-  def grow(add_time)
+  def initialize(color='green', age=0, taste='yuck')
+    @color, @age, @size = color, age, taste
+    @size = 0
+
+    @@apple_count += 1
+  end
+
+  def grow(add_time=1)
     @age += add_time
   end
 
@@ -22,10 +25,6 @@ class Apple
 
   def to_s
     "apple #{@color}"
-  end
-
-  def self.report
-    puts "Count of apples - #{@@apple_count}"
-  end
+  end  
 
 end
