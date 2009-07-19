@@ -9,7 +9,7 @@ class Apple
   end
 
   def initialize(color='green', age=0, taste='yuck')
-    @color, @age, @size = color, age, taste
+    @color, @age, @taste = color, age, taste
     @size = 0
 
     @@apple_count += 1
