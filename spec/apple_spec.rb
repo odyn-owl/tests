@@ -1,18 +1,8 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-module AppleHelperMethods
-
-  def create_new_apple
-    @apple = Apple.new()
-  end
-
-end
-
-
-
 describe Apple, "when first created" do
   
-  include AppleHelperMethods
+  include AppleSpecHelper
 
   before do
     create_new_apple
@@ -40,7 +30,7 @@ end
 
 describe Apple, "when it is growing" do
  
-  include AppleHelperMethods
+  include AppleSpecHelper
 
   before do
     create_new_apple
