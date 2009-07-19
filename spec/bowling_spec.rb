@@ -1,7 +1,4 @@
-# bowling_spec.rb
-
-require 'bowling'
-
+require File.dirname(__FILE__) + '/spec_helper'
 
 
 describe Bowling do

@@ -1,5 +1,4 @@
-require 'apple'
-
+require File.dirname(__FILE__) + '/spec_helper'
 
 module AppleHelperMethods
 
@@ -8,8 +7,6 @@ module AppleHelperMethods
   end
 
 end
-
-
 
 
 
