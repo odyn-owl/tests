@@ -24,7 +24,7 @@ class Apple
   end
 
   def to_s
-    "apple #{@color}"
+    "Apple #{@color}"
   end  
 
 end
